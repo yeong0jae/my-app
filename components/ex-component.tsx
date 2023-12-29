@@ -4,7 +4,7 @@
  */
 
 "use client";
-
+ 
 import { Badge } from "@/components/ui/badge"
 import { MenuIcon } from "lucide-react"
 import Slider from "react-slick"; // react-slick 라이브러리에서 Slider 가져오기
