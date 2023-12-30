@@ -16,6 +16,11 @@
   }
 }
 
+@font-face {
+  font-family: 'Tenada';
+  src: url('/fonts/Tenada.ttf');
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

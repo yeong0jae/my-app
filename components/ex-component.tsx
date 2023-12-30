@@ -21,13 +21,46 @@ export function ExComponent() {
   const languages = {
     kor: [
       "여행지", "숙소", "스토리", "축제·공연", "여행 일정",
-      "제주 해녀 문화", "요약", "영문명", "무형유산의 의미", "전승정보", "본문",
-      "소셜 미디어", "해시태그", "관련 정보", "주변 정보"
+      "제주 해녀 문화", 
+      
+      [
+        "3초~6초", "인류무형문화에 등재된 제주 해녀문화",
+        "7초~9초","여기는 수백년 전통을 이어온 해녀들이 살아 숨 쉬는 곳입니다",
+        "10초~13초", "해녀들은 바다의 숨겨진 보물을 찾아 물살을 가르며, 자연과 하나 되어 살아갑니다.",
+        "14초~17초", "해녀들의 노력으로 얻은 해산물은 우리의 식탁을 풍성하게 하며, 제주 문화의 정수를 전합니다.",
+        "18초~21초", "해녀들이 바다에서 건져 올린 해산물은 제주의 자연과 문화를 대변합니다.",
+        "22초~25초", "제주도와 주민들은 해녀 문화를 보존하고 알리려고 노력하고 있습니다.",
+        "25초~27초", "제주 해녀의 전통, 우리 모두가 지켜야 할 바다의 이야기입니다."
+      ],
+      
+
+      "소셜 미디어", "해시태그", "관련 정보", "주변 정보",
+
+      "도시해녀 체험 프로그램", 
+      "- 가격: 스노클링 연습, 뿔소라 및 문어 등 해산물 채집, 수중 촬영 50,000원",
+      "- 일정 및 소요시간: 9시, 11시, 13시, 15시(1일 4타임 진행), 약 1시간 30분 소요",
+      "- 예약: 온라인 사전예약 필수",
+      "- 특이사항: 기상 상황에 따라 체험 프로그램 취소될 수 있음"
     ],
     eng: [
       "Travel Destination", "Accommodation", "Story", "Festival/Performance", "Travel Itinerary",
-      "Jeju Haenyeo Culture", "Summary", "English Name", "Meaning of Intangible Cultural Heritage", "Transmission Information", "Main Text",
-      "Social Media", "Hashtags", "Related Information", "Nearby Information"
+      "Jeju Haenyeo Culture",
+      
+      [
+        "3s~6s", "Jeju Haenyeo culture registered as Intangible Cultural Heritage of Humanity",
+        "7s~9s","This is a place where haenyeo, who have continued hundreds of years of tradition, are alive and breathing",
+        "10s~13s", "Haenyeo cut through the currents in search of hidden treasures in the sea, living as one with nature",
+        "14s~17s", "Seafood obtained through the efforts of female divers enriches our tables and conveys the essence of Jeju culture",
+        "18s~21s", "The seafood pulled from the sea by female divers represents the nature and culture of Jeju",
+        "22s~25s", "Jeju Island and its residents are trying to preserve and promote the culture of female divers.",
+        "25s~27s", "The tradition of Jeju divers is a story of the sea that we must all keep."
+      ],
+
+      "Social Media", "Hashtags", "Related Information", "Nearby Information",
+
+      "City Haenyeo Experience Program", "- Price: 50,000 won, includes snorkeling practice, collecting seafood such as horned turbans and octopuses, underwater shooting.", "- Schedule and Duration: Conducted at 9 am, 11 am, 1 pm, and 3 pm (4 times a day), takes approximately 1 hour and 30 minutes.", "- Reservation: Online pre-booking is required.", "- Note: The experience program may be canceled depending on weather conditions."
+
+
     ],
   };
 
@@ -46,10 +79,10 @@ export function ExComponent() {
 
 
   return (
-    <div className=" mx-auto bg-white">
+    <div className=" mx-auto bg-white font-serif">
       <header className="flex justify-between py-4 px-6 border-b fixed w-full bg-white top-0 z-50 mx-auto bg-opacity-80">
         <div className="flex items-center space-x-4">
-            <h1 className="text-3xl font-bold leading-tight text-gray-900 mr-5 mt-2">Technical1</h1>
+            <h1 className="text-3xl font-bold leading-tight text-gray-900 mr-5 mt-2 italic">Technical1</h1>
             <nav className="hidden lg:flex space-x-5 mt-2">
               <a className="text-gray-600 hover:text-gray-800" href="#">
                 {currentLanguage === 'kor' ? languages.kor[0] : languages.eng[0]}
@@ -76,40 +109,44 @@ export function ExComponent() {
           <UserIcon className="text-gray-600" />
         </div>
       </header>
+      
       <Slider {...settings}>
-          <div>
-            <Image
-              alt="Banner 1"
-              src="/image/banner1.png"
-              width={1440} // 원하는 너비로 조절
-              height={600} // 원하는 높이로 조절
-            />
-          </div>
-          <div>
-            <Image
-              alt="Banner 2"
-              src="/image/banner2.png"
-              width={1440} // 원하는 너비로 조절
-              height={600} // 원하는 높이로 조절
-            />
-          </div>
-        </Slider>
+        <div className="w-full">
+          <Image
+            alt="Banner 1"
+            src="/image/banner1.png"
+            layout="responsive"
+            width={900}
+            height={500}
+          />
+        </div>
+        <div>
+          <Image
+            alt="Banner 2"
+            src="/image/banner1.png"
+            layout="responsive"
+            width={900}
+            height={500}
+          />
+        </div>
+      </Slider>
+      
       <main className="py-12 px-12 mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="col-span-2">
             <div className="mb-4">
               <p className="mt-4 text-gray-800">
                 <iframe
-                  width="900"
-                  height="400"
-                  src="https://www.youtube.com/embed/VWr5UmHc1mo"
+                  width="100%"
+                  height="500"
+                  src="https://www.youtube.com/embed/0ZhvsOr4RLo"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </p>
             </div>
-            <h1 className="text-3xl  mb-4">
+            <h1 className="text-3xl mb-4 font-semibold">
               {currentLanguage === 'kor' ? languages.kor[5] : languages.eng[5]}
             </h1>
             <div className="flex items-center justify-between mb-4">
@@ -130,69 +167,149 @@ export function ExComponent() {
                 <LinkIcon className="text-gray-600" />
               </div>
             </div>
-            <div className="max-w-screen-xl mx-auto bg-white p-6">
+<div className="max-w-screen-xl mx-auto bg-white pt-6 pl-2">
   <div className="mb-8">
     <div className="flex items-center space-x-2">
-      <MenuIcon className="text-gray-700" />
-      <h1 className="text-xl font-bold">
-        {currentLanguage === 'kor' ? languages.kor[6] : languages.eng[6]}
+      <MenuIcon className="text-gray-700 w-4 h-4"/>
+      <h1 className="">
+        {currentLanguage === 'kor' ? languages.kor[6][0] : languages.eng[6][0]}
       </h1>
     </div>
-    <p className="mt-4 text-gray-800">
-      text
-    </p>
-  </div>
-  <div className="mb-8">
-    <div className="flex items-center space-x-2">
-      <MenuIcon className="text-gray-700" />
-      <h1 className="text-xl font-bold">
-        {currentLanguage === 'kor' ? languages.kor[7] : languages.eng[7]}
-      </h1>
-    </div>
-    <p className="mt-4 text-gray-800">
-      Culture of Jeju Haenyeo(Women Divers)
+    <p className="mt-4 text-gray-800 ">
+      {currentLanguage === 'kor' ? languages.kor[6][1] : languages.eng[6][1]}
     </p>
   </div>
   <div className="mb-8">
     <div className="flex items-center space-x-2">
-      <MenuIcon className="text-gray-700" />
-      <h1 className="text-xl font-bold">
-        {currentLanguage === 'kor' ? languages.kor[8] : languages.eng[8]}
+      <MenuIcon className="text-gray-700 w-4 h-4"/>
+      <h1 className="">
+        {currentLanguage === 'kor' ? languages.kor[6][2] : languages.eng[6][2]}
       </h1>
     </div>
     <p className="mt-4 text-gray-800">
-      text
+      {currentLanguage === 'kor' ? languages.kor[6][3] : languages.eng[6][3]}
     </p>
   </div>
   <div className="mb-8">
     <div className="flex items-center space-x-2">
-      <MenuIcon className="text-gray-700" />
-      <h1 className="text-xl font-bold">
-        {currentLanguage === 'kor' ? languages.kor[9] : languages.eng[9]}
+      <MenuIcon className="text-gray-700 w-4 h-4" />
+      <h1 className="">
+        {currentLanguage === 'kor' ? languages.kor[6][4] : languages.eng[6][4]}
       </h1>
     </div>
     <p className="mt-4 text-gray-800">
-      text
+      {currentLanguage === 'kor' ? languages.kor[6][5] : languages.eng[6][5]}
     </p>
   </div>
-  <div>
+  <div className="mb-8">
     <div className="flex items-center space-x-2">
-      <MenuIcon className="text-gray-700" />
-      <h1 className="text-xl font-bold">
-        {currentLanguage === 'kor' ? languages.kor[10] : languages.eng[10]}
+      <MenuIcon className="text-gray-700 w-4 h-4" />
+      <h1 className="">
+        {currentLanguage === 'kor' ? languages.kor[6][6] : languages.eng[6][6]}
       </h1>
     </div>
     <p className="mt-4 text-gray-800">
-      text
+      {currentLanguage === 'kor' ? languages.kor[6][7] : languages.eng[6][7]}
     </p>
   </div>
+  <div className="mb-8"> 
+    <div className="flex items-center space-x-2">
+      <MenuIcon className="text-gray-700 w-4 h-4"/>
+      <h1 className="">
+        {currentLanguage === 'kor' ? languages.kor[6][8] : languages.eng[6][8]}
+      </h1>
+    </div>
+    <p className="mt-4 text-gray-800">
+      {currentLanguage === 'kor' ? languages.kor[6][9] : languages.eng[6][9]}
+    </p>
+  </div>
+  <div className="mb-8">
+    <div className="flex items-center space-x-2">
+      <MenuIcon className="text-gray-700 w-4 h-4" />
+      <h1 className="">
+        {currentLanguage === 'kor' ? languages.kor[6][10] : languages.eng[6][10]}
+      </h1>
+    </div>
+    <p className="mt-4 text-gray-800">
+      {currentLanguage === 'kor' ? languages.kor[6][11] : languages.eng[6][11]}
+    </p>
+  </div>
+  <div className="mb-8">
+    <div className="flex items-center space-x-2">
+      <MenuIcon className="text-gray-700  w-4 h-4" />
+      <h1 className="">
+        {currentLanguage === 'kor' ? languages.kor[6][12] : languages.eng[6][12]}
+      </h1>
+    </div>
+    <p className="mt-4 text-gray-800" >
+      {currentLanguage === 'kor' ? languages.kor[6][13] : languages.eng[6][13]}
+    </p>
+  </div>
+  <div className="mb-8">
+    <div className="flex items-center space-x-2">
+      <h1 className="text-xl font-bold mt-4">
+        {currentLanguage === 'kor' ? languages.kor[11] : languages.eng[11]}
+      </h1>
+    </div>
+    <p className="mt-4 text-gray-800">
+      {currentLanguage === 'kor' ? languages.kor[12] : languages.eng[12]}
+    </p>
+    <p className="mt-4 text-gray-800">
+      {currentLanguage === 'kor' ? languages.kor[13] : languages.eng[13]}
+    </p>
+    <p className="mt-4 text-gray-800">
+      {currentLanguage === 'kor' ? languages.kor[14] : languages.eng[14]}
+    </p>
+    <p className="mt-4 mb-3 text-gray-800">
+      {currentLanguage === 'kor' ? languages.kor[15] : languages.eng[15]}
+    </p>
+    <div className="grid grid-cols-2 mt-16">
+      <Image
+      src="/image/last1.png"
+      alt="Jeju Haenyeo"
+      width={400}
+      height={200}
+      style={{
+        objectFit: "cover",
+      }}
+    />
+    <Image
+      src="/image/last2.png"
+      alt="Jeju Haenyeo"
+      width={400}
+      height={200}
+      style={{
+        objectFit: "cover",
+      }}
+    />
+    <Image
+      src="/image/last3.png"
+      alt="Jeju Haenyeo"
+      width={400}
+      height={200}
+      style={{
+        objectFit: "cover",
+      }}
+    />
+    <Image
+      src="/image/last4.png"
+      alt="Jeju Haenyeo"
+      width={400}
+      height={200}
+      style={{
+        objectFit: "cover",
+      }}
+    />
+    </div>
+    
+  </div> 
 </div>
           </div>
           <div className="col-span-1">
             <div className="sticky top-6">
               <div className="mb-6 ml-4">
                 <h2 className="text-lg font-bold mb-3">
-                  {currentLanguage === 'kor' ? languages.kor[11] : languages.eng[11]}
+                  {currentLanguage === 'kor' ? languages.kor[7] : languages.eng[7]}
                 </h2>
                 <div className="flex items-center space-x-2">
                   <Image
@@ -223,7 +340,7 @@ export function ExComponent() {
               </div>
               <div className="mb-6 ml-4">
                 <h2 className="text-lg font-bold mb-2">
-                  {currentLanguage === 'kor' ? languages.kor[12] : languages.eng[12]}
+                  {currentLanguage === 'kor' ? languages.kor[8] : languages.eng[8]}
                 </h2>
                 <Image
                   src="/image/hashtag.png"
@@ -235,11 +352,21 @@ export function ExComponent() {
               </div>
               <div className="mb-6 ml-4">
                 <h2 className="text-lg font-bold mb-2">
-                  {currentLanguage === 'kor' ? languages.kor[13] : languages.eng[13]}
+                  {currentLanguage === 'kor' ? languages.kor[9] : languages.eng[9]}
                 </h2>
                 <div className="grid grid-cols-2 gap-2">
                   <Image
-                    src="/image/Jejuattraction1.png"
+                    src="/image/4-2.png"
+                    alt="Jeju attraction"
+                    width={200} 
+                    height={200}
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+
+                  <Image
+                    src="/image/4-3.png"
                     alt="Jeju attraction"
                     width={200}
                     height={200}
@@ -249,7 +376,7 @@ export function ExComponent() {
                   />
 
                   <Image
-                    src="/image/Jejuattraction2.png"
+                    src="/image/4-4.png"
                     alt="Jeju attraction"
                     width={200}
                     height={200}
@@ -259,17 +386,7 @@ export function ExComponent() {
                   />
 
                   <Image
-                    src="/image/Jejuattraction3.png"
-                    alt="Jeju attraction"
-                    width={200}
-                    height={200}
-                    style={{
-                      objectFit: "cover",
-                    }}
-                  />
-
-                  <Image
-                    src="/image/Jejuattraction4.png"
+                    src="/image/4-5.png"
                     alt="Jeju attraction"
                     width={200}
                     height={200}
@@ -282,7 +399,7 @@ export function ExComponent() {
               </div>
               <div className="ml-4">
                 <h2 className="text-lg font-bold mb-2">
-                  {currentLanguage === 'kor' ? languages.kor[14] : languages.eng[14]}
+                  {currentLanguage === 'kor' ? languages.kor[10] : languages.eng[10]}
                 </h2>
                 <div className="space-y-4">
                   <Image
